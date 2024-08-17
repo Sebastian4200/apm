@@ -1,0 +1,10 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}{{page.title}} | APM{% endblock %}
+
+{% block main %}
+<div class="container my-6 pt-5">
+  {{ page.content|safe }}
+</div>
+{% endblock main%}

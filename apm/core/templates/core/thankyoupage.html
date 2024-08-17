@@ -1,0 +1,29 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}¡Formulario enviado! | APM{% endblock title %}
+
+{% block content %}
+<svg xmlns="http://www.w3.org/2000/svg" class="d-none tex-danger">
+  <symbol id="check2-circle" viewBox="0 0 16 16" style="fill: #198754;">
+    <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+    <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+  </symbol>
+</svg>
+
+<div class="container thanks">
+  <div class="px-5 text-center rounded-5 my-7">
+    <svg class="mt-3 mb-3" width="48" height="48"><use xlink:href="#check2-circle" /></svg>
+    <h1 class="text-body-emphasis font-banchero">Gracias por enviar tu formulario</h1>
+    <p class="col-lg-8 mx-auto fs-5">
+      Tu interés y participación son muy importantes para nosotros. Nos alegra saber que estás interesado en aprender
+      más sobre matemáticas. Pronto nos pondremos en contacto contigo.
+    </p>
+    <div class="d-inline-flex gap-2 mb-0">
+      <p class="col-lg-8 mx-auto fs-5">
+        ¡Que tengas un excelente día y sigue disfrutando del fascinante mundo de las matemáticas!.
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock content %}

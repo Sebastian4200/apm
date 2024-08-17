@@ -1,0 +1,47 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Sobre mí | APM{% endblock title %}
+
+{% block content %}
+<div class="hero" style="background-image: url(&quot;../static/core/img/about-me.webp&quot;)">
+  <div class="titulo">
+    <h1 class="display-1 fw-bold otto"><span class="paintbrush-blue">Sobre mí</span></h1>
+  </div>
+</div>
+{% endblock content %}
+
+{% block main %}
+<section class="section-featured" style="background-color: rgba(0,71,187,.1)">
+  <!-- <div class="section-featured__curve" style="background-color: #dabdcb"></div> -->
+  <div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-5">
+        <img
+          src="{% static 'core/img/profesor_about_me.jpg' %}"
+          class="d-block mx-lg-auto img-fluid shadow-cyan-bluish-gray rounded-3"
+          alt="Imagen profe de mates"
+          width="700"
+          height="500"
+          loading="lazy"
+          />
+      </div>
+      <div class="col-lg-7">
+        <h1 class="display-5 fw-bold lh-1 mb-3 text-blue-cool font-banchero">Soy Alfonso, tu profe de matemáticas.</h1>
+        <p class="lead fw-normal">
+          Mi nombre es Alfonso Navas y soy licenciado en Matemáticas por la universidad de Granada. También poseo el
+          máster en Física y Matemáticas (Fisymat) realizado conjuntamente por la universidad de Granada y la
+          universidad de Castilla la Mancha.
+        </p>
+        <p class="lead fw-normal">
+          Obtuve la plaza como profesor de matemáticas en la convocatoria de oposición de Cantabria celebrada en 2012
+          quedando en tercera posición de todo el proceso selectivo. Actualmente ejerzo como docente en un instituto de Málaga.
+        </p>
+        <p class="lead fw-normal">
+          Actualmente ejerzo como docente en un instituto de Málaga.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock main %}

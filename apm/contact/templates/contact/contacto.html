@@ -1,0 +1,125 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Contacto | APM{% endblock title %}
+
+{% block recaptcha %}<script src="https://www.google.com/recaptcha/api.js?render={{recaptcha_site_key}}"></script>{% endblock recaptcha %}
+
+{% block grecaptcha %}
+<script>
+  //global grecaptcha
+  grecaptcha.ready(function() {
+    grecaptcha.execute('{{recaptcha_site_key}}', {action: "/contact/"}).then(function(token) {
+      document.getElementById('g-recaptcha-response').value = token;
+    });
+  });
+</script>{% endblock grecaptcha%}
+
+{% block content %}
+<div class="hero" style="background-image: url('../static/core/img/contact_header.jpg')">
+  <div class="titulo">
+    <h1 class="display-1 fw-bold otto">Contacto</h1>
+  </div>
+</div>
+{% endblock content %}
+
+{% block main %}
+<div id="trigger2" class="px-4 pt-5 mt-5 text-center">
+  <h1 id="sign-up-button" class="display-5 fw-bold text-blue-cool font-banchero">
+    Hablemos de matemáticas
+  </h1>
+  <div id="trigger1" class="col-lg-6 mx-auto">
+    <p id="text-fade-in" class="lead fw-normal mb-0">
+      ¡Hola! Soy Alfonso Navas, un apasionado profesor de matemáticas especializado en la preparación de alumnos para
+      sus oposiciones. Con años de experiencia y un enfoque personalizado, mi objetivo es ayudarte a alcanzar tus metas
+      académicas y profesionales. Si tienes alguna pregunta o deseas más información sobre mis clases, contacta conmigo.
+      Estoy aquí para apoyarte en tu camino hacia el éxito.
+    </p>
+  </div>
+</div>
+
+<div class="container col-xxl-8 px-4 py-5">
+  <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+    <div class="col-lg-6">
+      <img
+        src="{% static 'core/img/contact_img.jpg' %}"
+        class="d-block mx-lg-auto img-fluid shadow-brown rounded-3"
+        alt="Bootstrap Themes"
+        width="700"
+        height="500"
+        loading="lazy"
+      />
+    </div>
+    <div class="col-lg-6">
+      <form action="" method="POST" class="shadow p-4 p-md-5 border border-black rounded-3 bg-body-tertiary">
+        {% csrf_token %}
+        <div class="form-floating mb-3">
+          <!-- <input type="text" class="form-control" id="floatingNombre" placeholder="Nombre" /> -->
+          <!-- <label for="floatingNombre">nombre</label> -->
+          {{ form.nombre }}
+          {{ form.nombre.errors }}
+          <label for="{{ form.nombre.id_for_label }}" class="form-label">Nombre</label>
+        </div>
+        <div class="form-floating mb-3">
+          <!-- <input type="text" class="form-control" id="floatingAsunto" placeholder="Asunto" /> -->
+          <!-- <label for="floatingAsunto">Asunto</label> -->
+          {{ form.asunto }}
+          {{ form.asunto.errors }}
+          <label for="{{ form.asunto.id_for_label }}" class="form-label">Asunto</label>
+        </div>
+        <div class="form-floating mb-3">
+          <!-- <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" /> -->
+          <!-- <label for="floatingInput">Correo electrónico</label> -->
+          {{ form.email }}
+          {{ form.email.errors }}
+          <label for="{{ form.email.id_for_label }}" class="form-label">Correo electrónico</label>
+        </div>
+        <div class="form-floating mb-3">
+          <!-- <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label> -->
+          <!-- <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea> -->
+          {{ form.mensaje }}
+          <label for="{{ form.mensaje.id_for_label }}" class="form-label">Mensaje</label>
+        </div>
+        {% load pages_extras %}
+        {% get_page_privacy as page %}
+        <div class="checkbox mb-3">
+          <!-- <label> <input type="checkbox" /> Aceptar política de privacidad. </label> -->
+          <label> {{ form.politica_privacidad }}
+            <a href="{% url 'pagina:page' page.id page.title|slugify %}">Aceptar política privacidad.</a>
+          </label>
+        </div>
+        <!-- reCAPTCHA input -->
+        <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+        <button class="w-100 btn btn-lg btn-primary rounded-pill" type="submit">Enviar</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock main %}
+
+{% block javascript %}
+<script type="text/javascript" src="{% static 'core/js/ScrollMagic.min.js' %}"></script>
+<script>
+  // Inicia controlador
+  var controller = new ScrollMagic.Controller();
+
+  new ScrollMagic.Scene({
+    triggerElement: "#trigger1",
+    triggerHook: 0.9,
+    offset: 100,
+    reverse: false
+  })
+  .setClassToggle("#text-fade-in", "show")
+  .addTo(controller);
+
+  new ScrollMagic.Scene({
+    triggerElement: "#trigger2",
+    triggerHook: 0.9,
+    offset: 50,
+    reverse: false
+  })
+  .setClassToggle("#sign-up-button", "show")
+  .addTo(controller);
+
+</script>
+{% endblock javascript %}

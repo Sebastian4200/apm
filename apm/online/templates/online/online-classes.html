@@ -1,0 +1,194 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Clases online | APM{% endblock title %}
+
+{%block content %}
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'core/img/online_01.jpg' %}" class="d-block w-100" alt="Clase presencial" />
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'core/img/online_02.jpg' %}" class="d-block w-100" alt="Clase presencial" />
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'core/img/online_03.jpg' %}" class="d-block w-100" alt="Clase presencial" />
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+{% endblock content %}
+
+{% block main %}
+<section class="pb-5 text-center container">
+  <div class="row pb-lg-5">
+    <div class="mx-auto">
+      <h1 class="font-banchero text-blue-cool mb-4">Curso Online</h1>
+      <p class="lead fw-normal">
+        La preparación online de la oposición de matemáticas consta de clases online y la entrega mensual de material
+        relativo tanto a temas, problemas y programación didáctica. Todos los meses se impartirán <strong>tres sesiones
+        online</strong>.Nuestra idea es aprovechar al máximo el tiempo disponible por cada persona y ser lo más
+        eficiente posible.Preparamos las tres pruebas que consta la actual oposición:
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-sm-4 text-center mb-4">
+      <div class="out-border-icon">
+        <img src="{% static 'core/img/libros.png' %}" width="150" height="150" alt="Temas Didáctica" />
+      </div>
+      <h2 class="fw-normal font-banchero my-3">
+        <span class="paintbrush-brown">Temas Didáctica</span>
+      </h2>
+      <p><a class="btn btn-warning" href="#desarrollotema">Ver detalles</a></p>
+    </div>
+
+    <div class="col-12 col-sm-4 text-center mb-4">
+      <div class="out-border-icon">
+        <img src="{% static 'core/img/resolucion-de-problemas.png' %}" width="150" height="150" alt="Problemas" />
+      </div>
+      <h2 class="fw-normal font-banchero my-3">
+        <span class="paintbrush-blue">Problemas</span>
+      </h2>
+      <p><a class="btn btn-warning" href="#examenproblemas">Ver detalles</a></p>
+    </div>
+
+    <div class="col-12 col-sm-4 text-center mb-4">
+      <div class="out-border-icon">
+        <img src="{% static 'core/img/didactica.png' %}" width="150" height="150" alt="Didáctica" />
+      </div>
+      <h2 class="fw-normal font-banchero text-blue-cool my-3">
+        <span class="paintbrush-red">Didáctica</span>
+      </h2>
+      <p><a class="btn btn-warning" href="#preparardidactica">Ver detalles</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <hr class="featurette-divider" id="desarrollotema" />
+  <!-- Temas -->
+  <div class="row featurette">
+    <div class="col-lg-7">
+      <h2 class="fw-normal lh-1 font-banchero text-brown-cool mb-3">
+        Desarrollo de un tema.
+      </h2>
+      <p class="lead fw-normal">
+        No doy los temas en brutos (como hacen las academias), pues nos obligaría a invertir una cantidad
+        ingente de tiempo en resumir, diseñar y reestructurar el tema para que nos dé tiempo a escribirlo
+        en las 2 horas que dura este examen, a la vez que dejamos todo lo importante del tema.
+      </p>
+      <p class="lead fw-normal">
+        En lugar de eso, se facilitan <strong>36 temas ya resumidos y estructurados</strong>, directos para
+        empezar a estudiarlos y memorizarlos. Son los que resumí yo cuando saqué la plaza. En nueve años de
+        preparador, opositores que han estudiado estos temas han obtenido notas de 9.3, 8.6, 9.8, 9.1, 8.8, 8.5, 9.2…
+        en diferentes convocatorias de oposiciones en Andalucía.
+      </p>
+      <p class="lead fw-normal">
+        Se realizarán durante el curso <strong>simulacros de examen de temas</strong>, para que el día de la
+        oposición no sea la primera vez que nos enfrentamos a ese escenario. No es una buena idea enfrentarse
+        por primera vez a escribir un tema a contrarreloj el mismo día del examen.
+      </p>
+    </div>
+    <div class="col-lg-5">
+      <img
+        class="img-fluid rounded shadow-brown"
+        src="{% static 'core/img/clases_online.jpg' %}" alt="Temas Didáctica">
+    </div>
+  </div>
+
+  <hr class="featurette-divider" id="examenproblemas" />
+  <!-- Problemas -->
+  <div class="row featurette">
+    <div class="col-lg-7 order-md-2">
+      <h2 class="font-banchero text-blue-cool fw-normal lh-1 mb-3">
+        Examen de problemas.
+      </h2>
+      <p class="lead fw-normal">
+        Es la <strong>clave</strong> de la oposición. Dedicamos la mayor parte del tiempo de las sesiones
+        presenciales a preparar este examen.
+      </p>
+      <p class="lead fw-normal">
+        Os paso en pdf los 10 volúmenes de problemas de oposición de matemáticas de la editorial Deimos. Es una
+        recopilación de todos los problemas aparecidos en exámenes de oposiciones de mates en todas las CCAA
+        desde los años 80 hasta 2023. Todos los problemas vienen resueltos detalladamente. Hay miles de problemas.
+      </p>
+      <p class="lead fw-normal">
+        Por ello, para llevar un orden, he diseñado una selección de problemas por cada bloque (Aritmética,
+        Álgebra, Análisis, Geometría y Probabilidad).
+      </p>
+      <p class="lead fw-normal">
+        Las <strong>sesiones online</strong> consistirán exclusivamente en la <strong>resolución de problemas</strong>.
+        Serán clases grabadas en vídeo con buena calidad de imagen y sonido, donde <strong>se explica</strong> de
+        forma muy ilustrativa <strong>los razonamientos, ideas felices y teoremas necesarios</strong> para afrontar
+        con éxito <strong>cada tipo de problema</strong>.
+      </p>
+      <p class="lead fw-normal">
+        Dichos vídeos, obviamente, podrán ser reproducidos las veces que se desee.
+      </p>
+    </div>
+    <div class="col-lg-5 order-md-1 mb-5">
+      <img
+        class="img-fluid rounded shadow-blue-dark-left"
+        src="{% static 'core/img/problemas_online.jpg' %}" alt="Examen de problemas">
+    </div>
+  </div>
+  <div class="row">
+    <p class="lead fw-normal">
+      Al no ser la sesión online en directo tiene varias ventajas: la primera, que cada opositor puede ver los
+      vídeos de resolución de problemas en el momento que desee, y la segunda que los vídeos se pueden pausar,
+      reproducir las veces que sea necesario para entender mejor un concepto o idea... Es como tener a tu
+      entera disposición una clase de problemas de oposición.
+    </p>
+    <p class="lead fw-normal">
+      Al término de cada sesión se dejan propuestos problemas parecidos a estos para que los intentéis, y luego
+      poder comprobar la solución con los libros de Deimos.
+    </p>
+    <p class="lead fw-normal">
+      Se realizará también durante el curso <strong>simulacros de examen de problemas</strong> por cada bloque.
+      Es la mejor manera de forzarse a estudiar y de que cada opositor compruebe cómo lo lleva realmente.
+    </p>
+  </div>
+
+  <hr class="featurette-divider" id="preparardidactica" />
+  <!-- Didáctica -->
+  <div class="row featurette mb-8">
+    <div class="col-md-7">
+      <h2 class="font-banchero fw-normal lh-1 text-red-cool mb-3">
+        Didáctica.
+      </h2>
+      <p class="lead fw-normal">
+        Os facilito (en formato Word) una programación en formato borrador. Dicho documento de la programación
+        se debe actualizar y, sobre todo, personalizar. Pero al trabajar con uno ya hecho se ahorra muchísimo
+        tiempo con respecto a empezar una programación desde un Word en blanco. También se facilitan varias
+        situaciones de aprendizaje.
+      </p>
+      <p class="lead fw-normal">
+        Como preparador me comprometo a leer y corregir la versión final de vuestra programación, siempre y cuando
+        me sea facilitada con la suficiente antelación. No se puede leer con detenimiento un documento de 60 páginas
+        de un día para otro.
+      </p>
+      <p class="lead fw-normal">
+        Además, se exponen materiales y recursos para la enseñanza de las matemáticas, los cuales pueden (y deben)
+        ser expuestos en la exposición.
+      </p>
+    </div>
+    <div class="col-md-5">
+      <img
+        class="img-fluid rounded shadow-red"
+        src="{% static 'core/img/didactica_online.jpg' %}" alt="Preparación didáctica">
+    </div>
+  </div>
+</div>
+{% endblock main %}

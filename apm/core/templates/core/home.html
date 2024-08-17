@@ -1,0 +1,260 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Inicio | APM{% endblock title %}
+
+{% block recaptcha %}<script src="https://www.google.com/recaptcha/api.js?render={{recaptcha_site_key}}"></script>{% endblock recaptcha %}
+
+{% block grecaptcha %}
+<script>
+  //global grecaptcha
+  grecaptcha.ready(function() {
+    grecaptcha.execute('{{recaptcha_site_key}}', {action: "/home/"}).then(function(token) {
+      document.getElementById('g-recaptcha-response').value = token;
+    });
+  });
+</script>{% endblock grecaptcha%}
+
+{% block content %}
+<div class="hero" style="background-image: url('../static/core/img/home_header.jpg')"></div>
+<!-- Carousel -->
+<!--
+<div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="{% static 'core/img/2.jpg' %}" alt="imagen_01">
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1>Example headline.</h1>
+            <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Another example headline.</h1>
+            <p>Some representative placeholder content for the second slide of the carousel.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <div class="container">
+          <div class="carousel-caption text-end">
+            <h1>One more for good measure.</h1>
+            <p>Some representative placeholder content for the third slide of this carousel.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>-->
+
+<!-- <div class="b-example-divider"></div> -->
+{% endblock content %}
+
+{% block main %}
+<div id="trigger1" class="px-4 pt-5 my-5 text-center border-bottom hero-1">
+  <h1 id="reveal1" class="display-4 fw-bold text-body-emphasis font-banchero mb-4">
+    <span class="paintbrush-blue">Preparación eficaz</span>
+  </h1>
+  <div id="trigger2" class="col-lg-6 mx-auto">
+    <p id="reveal2" class="lead fw-normal mb-4">
+      Te preparamos de manera eficaz para la oposición de secundaria de matemáticas. Ofrecemos clases tanto en modalidad
+      presencial en Málaga capital como en modalidad online. Nuestro enfoque personalizado y los recursos de alta
+      calidad que utilizamos te ayudarán a alcanzar tus objetivos y superar con éxito la oposición. ¡Inscríbete ahora y
+      da el primer paso hacia tu futuro profesional!
+    </p>
+    <div id="trigger3" class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+      <a id="sign-up-button" class="btn btn-warning btn-lg rounded-pill" href="#inscribete" role="button">
+        ¡Inscríbete ahora y da el primer paso hacia tu futuro!
+      </a>
+    </div>
+  </div>
+  <div id="trigger4" class="overflow-hidden" style="max-height: 50vh">
+    <div id="reveal3" class="container px-5">
+      <img
+        src="{% static 'core/img/hombre_apuntando_con_dedo.png' %}"
+        class="img-fluid border border-0 rounded-3 shadow-none mb-4"
+        alt="Hombre señalando con el dedo"
+        width="700"
+        height="500"
+        loading="lazy"
+      />
+    </div>
+  </div>
+</div>
+
+<!-- <div class="b-example-divider"></div> -->
+
+<div class="container col-xl-10 col-xxl-8 px-4 pb-5" id="inscribete">
+  <div class="row align-items-center g-lg-5 py-5">
+    <div class="col-lg-7 text-center text-lg-start">
+      <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3 font-banchero">
+        <span class="paintbrush-blue text-center">Más del 70% de casos de éxito</span>
+      </h1>
+      <p class="col-lg-10 fs-4">
+        Más del 70% de los opositores han obtenido plaza en las últimas convocatorias. Grupos reducidos
+        para una atención personalizada.
+      </p>
+    </div>
+    <div class="col-md-10 mx-auto col-lg-5">
+      <form action="" method="POST" class="shadow p-4 p-md-5 border border-black rounded-3 bg-body-tertiary">
+        {% csrf_token %}
+        <div class="form-floating mb-3">
+          <!-- <input type="text" class="form-control" id="floatingNombre" placeholder="Nombre" /> -->
+          <!-- <label for="floatingNombre">nombre</label> -->
+          {{ form.nombre }}
+          {{ form.nombre.errors }}
+          <label for="{{ form.nombre.id_for_label }}" class="form-label">Nombre</label>
+        </div>
+        <div class="form-floating mb-3">
+          <!-- <input type="text" class="form-control" id="floatingApellidos" placeholder="Apellidos" /> -->
+          <!-- <label for="floatingApellidos">Apellidos</label> -->
+          {{ form.telefono }}
+          {{ form.telefono.errors }}
+          <label for="{{ form.telefono.id_for_label }}" class="form-label">Teléfono</label>
+        </div>
+        <div class="form-floating mb-3">
+          <!-- <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" /> -->
+          <!-- <label for="floatingInput">Correo electrónico</label> -->
+          {{ form.email }}
+          {{ form.email.errors }}
+          <label for="{{ form.email.id_for_label }}" class="form-label">Correo electrónico</label>
+        </div>
+        <div class="form-floating mb-3">
+          {{ form.mensaje }}
+          <label for="{{ form.mensaje.id_for_label }}" class="form-label">Mensaje</label>
+        </div>
+        {% load pages_extras %}
+        {% get_page_privacy as page %}
+        <div class="checkbox mb-3">
+          <!-- <label> <input type="checkbox"/> Aceptar política de privacidad. </label> -->
+          <label> {{ form.politica_privacidad }}
+            <a href="{% url 'pagina:page' page.id page.title|slugify %}">Aceptar política privacidad.</a>
+          </label>
+        </div>
+        <!-- reCAPTCHA input -->
+        <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+        <button class="w-100 btn btn-lg btn-primary rounded-pill" type="submit">Inscríbete</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<section style="background-color: rgba(0,71,187,.1);">
+  <div id="trigger5" class="pt-5">
+    <h1 class="display-4 fw-bold text-center text-blue-cool font-banchero flipInX" style="letter-spacing: -0.125rem;">
+        Prepara tus oposiciones
+    </h1>
+  </div>
+  <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      <div class="col">
+        <div class="card card-blue-rounded">
+          <img src="{% static 'core/img/presencial_03.webp' %}" class="card-img-top" alt="Clases presenciales">
+          <div class="card-body">
+            <h5 class="card-title font-banchero text-blue-cool text-center lh-lg">CLASES PRESENCIALES</h5>
+            <p class="card-text">
+              ¡Prepárate para destacar en tus oposiciones de matemáticas con nuestro curso presencial!. Nuestra
+              metodología única y eficiente está diseñada para aprovechar al máximo tu tiempo, ofreciéndote
+              material neto y dedicando las clases a resolver problemas y aclarar todas tus dudas. Únete a nosotros
+              desde Septiembre hasta Junio y alcanza tus objetivos con confianza.
+              ¡Inscríbete ahora y da el primer paso hacia tu éxito!
+            </p>
+            <a class="float-end" href="{% url 'in-class' %}">
+              <span class="paintbrush-yellow font-banchero lh-lg">PRESENCIAL MÁLAGA</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card card-blue-rounded">
+          <img src="{% static 'core/img/presencial_03.webp' %}" class="card-img-top" alt="Clases online">
+          <div class="card-body">
+            <h5 class="card-title font-banchero text-blue-cool text-center lh-lg">CLASES ONLINE</h5>
+            <p class="card-text">
+              This is a longer card with supporting text below as a natural lead-in to additional content.
+              This content is a little bit longer.
+            </p>
+            <a class="float-end" href="{% url 'in-class' %}">
+              <span class="paintbrush-yellow font-banchero">CLASES ONLINE</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock main %}
+
+{% block javascript %}
+<script type="text/javascript" src="{% static 'core/js/ScrollMagic.min.js' %}"></script>
+<script>
+  // Inicia controlador
+  var controller = new ScrollMagic.Controller();
+
+  new ScrollMagic.Scene({
+    triggerElement: "#trigger5",
+    triggerHook: 0.9,
+    offset: 50,
+    reverse: false
+  })
+  .setClassToggle(".flipInX", "show")
+  .addTo(controller);
+
+  new ScrollMagic.Scene({
+    triggerElement: "#trigger4",
+    triggerHook: 0.9,
+    offset: 50,
+    reverse: false
+  })
+  .setClassToggle("#reveal3", "show")
+  .addTo(controller);
+
+  new ScrollMagic.Scene({
+    triggerElement: "#trigger3",
+    triggerHook: 0.9,
+    offset: 50,
+    reverse: false
+  })
+  .setClassToggle("#sign-up-button", "show")
+  .addTo(controller);
+
+  new ScrollMagic.Scene({
+    triggerElement: "#trigger2",
+    triggerHook: 0.9,
+    offset: 50,
+    reverse: false
+  })
+  .setClassToggle("#reveal2", "show")
+  .addTo(controller);
+
+  new ScrollMagic.Scene({
+    triggerElement: "#trigger1",
+    triggerHook: 0.9,
+    offset: 50,
+    reverse: false
+  })
+  .setClassToggle("#reveal1", "show")
+  .addTo(controller);
+</script>
+{% endblock javascript %}
