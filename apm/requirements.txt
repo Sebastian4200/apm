@@ -1,6 +1,0 @@
-Django==4.2.8
-requests==2.31.0
-pillow==10.3.0
-django-environ==0.11.2
-django-ckeditor==6.7.1
-django-taggit==5.0.1
